@@ -36,12 +36,23 @@ class AlignedMoseiDataset(Dataset):
             self.text, self.labels = self._get_data(self.data_type)
 
     def _get_data(self, data_type):
-        data = torch.load(self.data_path)
-
+        if self.data_path.endswith("pt"):
+            data = torch.load(self.data_path)
+        else:
+            data = pickle.load(open(self.data_path, 'rb'))
         data = data[data_type]
-        visual = data['src-visual']
-        audio = data['src-audio']
-        text = data['src-text']
+        if 'src-visual' in data.keys():
+            visual = data['src-visual']
+        else:
+            visual = data['vision']
+        if 'src-audio' in data.keys():
+            audio = data['src-audio']
+        else:
+            audio = data['audio']
+        if 'src-text' in data.keys():
+            text = data['src-text']
+        else:
+            text = data['text']
         labels = data['tgt']      
         return visual, audio, text, labels
     
@@ -108,16 +119,14 @@ class UnAlignedMoseiDataset(Dataset):
             self.text, self.labels = self._get_data(self.data_type)
 
     def _get_data(self, data_type):
-        label_data = torch.load(self.data_path)
-        label_data = label_data[data_type]
-        with open('/amax/cmy/mosei_senti_data_noalign.pkl', 'rb') as f:
+        with open(self.data_path, 'rb') as f:
             data = pickle.load(f)
         data = data[data_type]
         visual = data['vision']
         audio = data['audio']
         text = data['text']
         audio = np.array(audio)
-        labels = label_data['tgt']      
+        labels = data['tgt']     
         return visual, audio, text, labels
     
     

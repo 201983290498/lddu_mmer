@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 def warmup_cosine(x, warmup=0.002):
     if x < warmup:
         return x/warmup
-    return 0.5 * (1.0 + torch.cos(math.pi * x))
+    return 0.5 * (1.0 + math.cos(math.pi * x))
 
 def warmup_constant(x, warmup=0.002):
     """ Linearly increases learning rate over `warmup`*`t_total` (as provided to BertAdam) training steps.

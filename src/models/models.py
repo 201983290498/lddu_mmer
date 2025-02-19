@@ -20,7 +20,6 @@ from __future__ import division
 from __future__ import print_function
 
 import logging
-import numpy as np
 
 import torch
 #torch.set_printoptions(profile="full")
@@ -29,14 +28,14 @@ import torch.nn.functional as F
 from torch.nn import CrossEntropyLoss, MSELoss
 import time
 
-from .module_bert import BertModel, BertConfig, BertOnlyMLMHead
+
+from .module_bert import BertModel, BertConfig, BertOnlyMLMHead, TCNBertModel
 from .until_module import PreTrainedModel, LayerNorm, CrossEn, MILNCELoss, Focalloss
-from .module_visual import VisualModel, VisualConfig, VisualOnlyMLMHead
-from .module_audio import AudioModel, AudioConfig, AudioOnlyMLMHead
+from .module_visual import VisualModel, VisualConfig, VisualOnlyMLMHead, TCNVisualModel
+from .module_audio import AudioModel, AudioConfig, AudioOnlyMLMHead, TCNAudioModel
 from .module_cross import CrossModel, CrossConfig
 from .module_decoder import DecoderModel, DecoderConfig
 from .until_module import getBinaryTensor, GradReverse, CTCModule
-# from warpctc_pytorch import CTCLoss
 import warnings
 warnings.filterwarnings("ignore")
 logger = logging.getLogger(__name__)
@@ -53,7 +52,6 @@ class EmotionClassifier(nn.Module):
         output = self.dense(seq_input)
         output = self.dropout(output)
         output = self.activation(output)
-
         return output
 
 
@@ -101,10 +99,10 @@ class TAILORPreTrainedModel(PreTrainedModel, nn.Module):
         assert model.bert is not None
         assert model.visual is not None
         assert model.audio is not None
-        assert model.vat_cross is not None
-        assert model.va_cross is not None
-        assert model.pc_cross is not None
-        assert model.decoder is not None
+        # assert model.vat_cross is not None
+        # assert model.va_cross is not None
+        # assert model.pc_cross is not None
+        # assert model.decoder is not None
 
         if state_dict is not None:
             model = cls.init_preweight(model, state_dict, task_config=task_config)
@@ -117,7 +115,7 @@ class NormalizeText(nn.Module):
         self.text_norm2d = LayerNorm(task_config.text_dim)
 
     def forward(self, text):
-        text = torch.as_tensor(text).float()
+        text = torch.as_tensor(text).float() # 转换成浮点数张量
         text = text.view(-1, text.shape[-2], text.shape[-1])
         text = self.text_norm2d(text)
         return text  
@@ -128,7 +126,7 @@ class NormalizeVideo(nn.Module):
         self.visual_norm2d = LayerNorm(task_config.video_dim)
 
     def forward(self, visual):
-        visual = torch.as_tensor(visual).float()
+        visual = torch.as_tensor(visual).float() # 转换成浮点数张量
         visual = visual.view(-1, visual.shape[-2], visual.shape[-1])
         visual = self.visual_norm2d(visual)
         return visual 
@@ -139,10 +137,10 @@ class NormalizeAudio(nn.Module):
         self.audio_norm2d = LayerNorm(task_config.audio_dim)
 
     def forward(self, audio):
-        audio = torch.as_tensor(audio).float()
+        audio = torch.as_tensor(audio).float() 
         audio = audio.view(-1, audio.shape[-2], audio.shape[-1])
         audio = self.audio_norm2d(audio)
-        return audio  #输出：[B, L, D]
+        return audio 
 
 def show_log(task_config, info):
     if task_config is None or task_config.local_rank == 0:
@@ -173,7 +171,7 @@ class TAILOR(TAILORPreTrainedModel):
         assert self.task_config.max_sequence <= audio_config.max_position_embeddings
         assert self.task_config.max_words + self.task_config.max_frames <= cross_config.max_position_embeddings
 
-        # Text Encoder ====>
+        # Text Encoder ====> 文本类
         bert_config = update_attr("bert_config", bert_config, "num_hidden_layers",
                                    self.task_config, "bert_num_hidden_layers")
         self.bert = BertModel(bert_config)
@@ -328,9 +326,9 @@ class TAILOR(TAILORPreTrainedModel):
                 ctc_loss = ctc_loss.cuda()
             
             if self.aligned:
-                all_loss = ml_loss  + 0.01 * (adv_common_loss + adv_preivate_loss) + 5e-6 * (preivate_diff_loss + common_diff_loss) + 0.5 * cml_loss    
+                all_loss = ml_loss  + self.task_config.adv_loss * (adv_common_loss + adv_preivate_loss) + self.task_config.diff_loss * (preivate_diff_loss + common_diff_loss) + self.task_config.cml * cml_loss    
             else:
-                all_loss = ml_loss  + 0.01 * (adv_common_loss + adv_preivate_loss) + 5e-6 * (preivate_diff_loss + common_diff_loss) + 0.5 * cml_loss  + 0.5 * ctc_loss
+                all_loss = ml_loss  + self.task_config.adv_loss * (adv_common_loss + adv_preivate_loss) + self.task_config.diff_loss * (preivate_diff_loss + common_diff_loss) + self.task_config.cml * cml_loss  + 0.5 * ctc_loss
 
             return  all_loss, predict_labels, groundTruth_labels, predict_scores
         else:
@@ -435,8 +433,99 @@ class TAILOR(TAILORPreTrainedModel):
         diff_loss = torch.norm(torch.bmm(first_feature, second_feature.transpose(1, 2)), dim=(1, 2)).pow(2).mean()
         return diff_loss
 
+# 更新对比学习模型
+class SupConLoss(nn.Module):
+    """Supervised Contrastive Learning: https://arxiv.org/pdf/2004.11362.pdf.
+    It also supports the unsupervised contrastive loss in SimCLR"""
+    def __init__(self, temperature=0.07, contrast_mode='all',
+                 base_temperature=0.07):
+        super(SupConLoss, self).__init__()
+        self.temperature = temperature
+        self.contrast_mode = contrast_mode
+        self.base_temperature = base_temperature
 
+    def forward(self, features, labels=None, mask=None):
+        """Compute loss for model. If both `labels` and `mask` are None,
+        it degenerates to SimCLR unsupervised loss:
+        https://arxiv.org/pdf/2002.05709.pdf
 
+        Args:
+            features: hidden vector of shape [bsz, n_views, ...].
+            labels: ground truth of shape [bsz].
+            mask: contrastive mask of shape [bsz, bsz], mask_{i,j}=1 if sample j
+                has the same class as sample i. Can be asymmetric.
+        Returns:
+            A loss scalar.
+        """
+        device = (torch.device('cuda')
+                  if features.is_cuda
+                  else torch.device('cpu'))
 
-    
+        if len(features.shape) < 3:
+            raise ValueError('`features` needs to be [bsz, n_views, ...],'
+                             'at least 3 dimensions are required')
+        if len(features.shape) > 3:
+            features = features.view(features.shape[0], features.shape[1], -1)
 
+        batch_size = features.shape[0] 
+        if labels is not None and mask is not None: 
+            raise ValueError('Cannot define both `labels` and `mask`')
+        elif labels is None and mask is None:
+            mask = torch.eye(batch_size, dtype=torch.float32).to(device)
+
+        elif labels is not None:
+            labels = labels.contiguous().view(-1, 1) 
+            if labels.shape[0] != batch_size: 
+                raise ValueError('Num of labels does not match num of features')
+            mask = torch.eq(labels, labels.T).float().to(device) 
+        else:
+            mask = mask.float().to(device)
+
+        contrast_count = features.shape[1] 
+        contrast_feature = torch.cat(torch.unbind(features, dim=1), dim=0)
+        if self.contrast_mode == 'one':
+            anchor_feature = features[:, 0]
+            anchor_count = 1
+        elif self.contrast_mode == 'all':
+            anchor_feature = contrast_feature 
+            anchor_count = contrast_count 
+        else:
+            raise ValueError('Unknown mode: {}'.format(self.contrast_mode))
+
+        # compute logits
+        anchor_dot_contrast = torch.div(
+            torch.matmul(anchor_feature, contrast_feature.T),
+            self.temperature) 
+        # for numerical stability
+        logits_max, _ = torch.max(anchor_dot_contrast, dim=1, keepdim=True)
+        logits = anchor_dot_contrast - logits_max.detach()
+
+        mask = mask.repeat(anchor_count, contrast_count)
+        logits_mask = torch.scatter(
+            torch.ones_like(mask),
+            1,
+            torch.arange(batch_size * anchor_count).view(-1, 1).to(device),
+            0
+        )
+        mask = mask * logits_mask
+
+        # compute log_prob
+        exp_logits = torch.exp(logits) * logits_mask
+        log_prob = logits - torch.log(exp_logits.sum(1, keepdim=True))
+
+        # compute mean of log-likelihood over positive
+        # modified to handle edge cases when there is no positive pair
+        # for an anchor point. 
+        # Edge case e.g.:- 
+        # features of shape: [4,1,...]
+        # labels:            [0,1,1,2]
+        # loss before mean:  [nan, ..., ..., nan] 
+        mask_pos_pairs = mask.sum(1)
+        mask_pos_pairs = torch.where(mask_pos_pairs < 1e-6, 1, mask_pos_pairs)
+        mean_log_prob_pos = (mask * log_prob).sum(1) / mask_pos_pairs
+
+        # loss
+        loss = - (self.temperature / self.base_temperature) * mean_log_prob_pos
+        loss = loss.view(anchor_count, batch_size).mean()
+
+        return loss

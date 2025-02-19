@@ -317,8 +317,8 @@ if __name__ == "__main__":
     
     preds, labels = [], []
     for k in pred_dict:
-    	preds.append(pred_dict[k])
-    	labels.append(gt_dict[k])
+      preds.append(pred_dict[k])
+      labels.append(gt_dict[k])
 
     preds = np.stack(preds)
     labels = np.stack(labels)

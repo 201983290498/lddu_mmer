@@ -1,8 +1,8 @@
-import codecs
 from sklearn import metrics
 import numpy as np
-import os
-
+import torch
+# import logging
+global logger
 def dense(y):
 	label_y = []
 	for i in range(len(y)):
@@ -10,8 +10,8 @@ def dense(y):
 			label_y.append(y[i][j])
 
 	return label_y
+
 def get_accuracy(y, y_pre):
-#	print('metric_acc:  ' + str(round(metrics.accuracy_score(y, y_pre),4)))
 	sambles = len(y)
 	count = 0.0
 	for i in range(sambles):
@@ -29,42 +29,44 @@ def get_accuracy(y, y_pre):
 	acc = float(count) / float(sambles)
 	acc=round(acc,4)
 	return acc
-#	print('accuracy_hand:' + str(acc))
 
 
 def get_metrics(y, y_pre):
 	"""
-
 	:param y:1071*6
 	:param y_pre: 1071*6
 	:return:
 	"""
 	y = y.cpu().detach().numpy()
 	y_pre = y_pre.cpu().detach().numpy()
-	test_labels = dense(y)
-	test_pred = dense(y_pre)
-#	print(metrics.classification_report(test_labels, test_pred, digits=4))
-	# print(metrics.classification_report(test_labels, test_pred, digits=4))
-	# print(metrics.precision_recall_fscore_support(test_labels, test_pred, average='macro'))
-	# print("Micro average Test Precision, Recall and F1-Score...")
-	# print(metrics.precision_recall_fscore_support(test_labels,test_pred, average='micro'))
-	y=np.array(y)
-	y_pre=np.array(y_pre)
-#	print("hammloss: "+str(round(hamming_loss,4)))
-	macro_f1 = metrics.f1_score(y, y_pre, average='macro')
-	macro_precision = metrics.precision_score(y, y_pre, average='macro')
-	macro_recall = metrics.recall_score(y, y_pre, average='macro')
 	acc = get_accuracy(y, y_pre)
-	y = np.array(y)
-	y_pre = np.array(y_pre)
-
-#	print(metrics.classification_report(y, y_pre, digits=4))
-	# print("micro_precision, micro_precison,micro_recall")
 	micro_f1 = metrics.f1_score(y, y_pre, average='micro')
 	micro_precision = metrics.precision_score(y, y_pre, average='micro')
 	micro_recall = metrics.recall_score(y, y_pre, average='micro')
-	# print(""+str(round(micro_precision,4))+"\t"+str(round(micro_recall,4))+"\t"+str(round(micro_f1,4)))
 	return micro_f1, micro_precision, micro_recall, acc
 
 
+def getBinaryTensor(imgTensor, boundary = 0.21):
+    one = torch.ones_like(imgTensor).fill_(1)
+    zero = torch.zeros_like(imgTensor).fill_(0)
+    return torch.where(imgTensor > boundary, one, zero)
 
+
+def search_binary(pred_score, total_label, eval_threshold=None):
+    if not (eval_threshold is None):
+        total_pred = getBinaryTensor(pred_score, eval_threshold)
+        total_micro_f1, total_micro_precision, total_micro_recall, total_acc = get_metrics(total_pred, total_label)
+        logger.info("Eval Threshold, Train_micro_f1: %f, Train_micro_precision: %f, Train_micro_recall: %f,  Train_acc: %f",
+                    total_micro_f1, total_micro_precision, total_micro_recall, total_acc)
+    best_f1,best_threshold = 0,0
+    best_result = []
+    for threshold in range(150, 300, 5):
+        total_pred = getBinaryTensor(pred_score, threshold / 1000.0)
+        total_micro_f1, total_micro_precision, total_micro_recall, total_acc = get_metrics(total_pred, total_label)
+        if total_micro_f1 > best_f1:
+            best_threshold = threshold
+            best_f1 = total_micro_f1
+            best_result = [total_micro_f1, total_micro_precision, total_micro_recall, total_acc]
+    logger.info("Best Threshold, Train_micro_f1: %f, Train_micro_precision: %f, Train_micro_recall: %f,  Train_acc: %f， threshold: %f",
+                best_result[0], best_result[1], best_result[2], best_result[3], best_threshold / 100)
+    return best_threshold / 1000.0
