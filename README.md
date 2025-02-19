@@ -1,16 +1,29 @@
-# Latent Distribution Decouple for Uncertain-Aware Multimodal Multi-label Emotion Recognition(LDDU)
+# Latent Distribution Decoupling: A Probabilistic Framework for Uncertainty-Aware Multimodal Emotion Recognition
+[\[Paper\]](https://arxiv.org/abs/2312.08379)
 
-## 1. framework
+This is the homepage for Latent Distribution Decoupling: A Probabilistic Framework for Uncertainty-Aware Multimodal Emotion Recognition.
+
+We propose a new framework name lddu based on the latent emotion space modeling and uncertainty learning. the proposed framework consists of three components: (1) the transformer-base unimodal extractor (2) a contrastive learning-based emotion space decomposition module and (3) an uncertainty-aware fusion and uncertainty calibration module.*
 
 ![LDDU Framework](./images/framework_v2.png)
-*The proposed framework consists of three components: (1) the transformer-base unimodal extractor (2) a contrastive learning-based emotion space decomposition module and (3) an uncertainty-aware fusion and uncertainty calibration module.*
 
-## 2. An illustration of aleatoric uncertainty
+Authors: [Jiangwang Huang](huangjiangwang@stu.cqu.edu.cn), [KaiWen Wei](weikaiwen@cqu.edu.cn), [Jiang Zhong](zhongjiang@cqu.edu.cn) at el.
 
-![uncertainty](./images/introduce_sample2.png)
-*An illustration of aleatoric uncertainty in MMER task. When adopting Gaussian distribution modeling in latent emotion space, case two’s semantic feature is more fuzzed with a larger variance due to cold speaking style than case one. Meanwhile, case one has stronger emotion intense located closer to the center of global distribution.*
+## Quick Links:
+- [Requirements](#requirements)
+- [Dataset](#dataset)
+- [Training and Inference](#training-and-inference)
+- [Citation](#citation)
 
-## 3. Data
+## Release Progress
+- Training code
+- Data and data preparation
+- Training readme
+
+## Requirements
+
+## Dataset
+
 the dataset can be downloaded from [here](https://drive.google.com/drive/folders/1umLIjIlL8Y1oWYzU2L6UyPTHFQx7RREB). Please download the aligned data and unaligned data to "./dataset/dataset1/". Then run the script:
 ```bash
 cd ./dataset
@@ -21,8 +34,14 @@ the dataset is without labels, to get ground truth, you can process by yourself,
 
 
 More details about CMU-MOSEI and M3ED datasets will be released soon after the paper is officially published.
-## 4. Train and inference
+
+## Training and Inference 
 ```bash
 pip install -r requirement
 sh trian.sh
+```
+
+## Citation
+```code
+
 ```
