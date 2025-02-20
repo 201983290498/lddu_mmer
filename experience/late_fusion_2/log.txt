@@ -1,60 +1,59 @@
-2025-02-19 07:07:28,819:INFO: Effective parameters:
-2025-02-19 07:07:28,819:INFO:   <<< aligned: True
-2025-02-19 07:07:28,819:INFO:   <<< audio_dim: 74
-2025-02-19 07:07:28,819:INFO:   <<< audio_model: audio-base
-2025-02-19 07:07:28,820:INFO:   <<< audio_num_hidden_layers: 3
-2025-02-19 07:07:28,820:INFO:   <<< average: False
-2025-02-19 07:07:28,820:INFO:   <<< batch_size: 64
-2025-02-19 07:07:28,820:INFO:   <<< bert_model: bert-base
-2025-02-19 07:07:28,820:INFO:   <<< bert_num_hidden_layers: 3
-2025-02-19 07:07:28,820:INFO:   <<< cdl: 1.0
-2025-02-19 07:07:28,820:INFO:   <<< cml: 0.3
-2025-02-19 07:07:28,820:INFO:   <<< coef_lr: 0.1
-2025-02-19 07:07:28,820:INFO:   <<< crl: 0.3
-2025-02-19 07:07:28,820:INFO:   <<< cross_model: cross-base
-2025-02-19 07:07:28,820:INFO:   <<< cross_num_hidden_layers: 3
-2025-02-19 07:07:28,820:INFO:   <<< data_path: ./datasets/dataset1/aligned_501.pkl
-2025-02-19 07:07:28,820:INFO:   <<< decoder_model: decoder-base
-2025-02-19 07:07:28,820:INFO:   <<< decoder_num_hidden_layers: 1
-2025-02-19 07:07:28,820:INFO:   <<< device: cuda:1
-2025-02-19 07:07:28,820:INFO:   <<< do_test: False
-2025-02-19 07:07:28,820:INFO:   <<< do_train: True
-2025-02-19 07:07:28,820:INFO:   <<< epochs: 30
-2025-02-19 07:07:28,820:INFO:   <<< final_loss: 1.0
-2025-02-19 07:07:28,820:INFO:   <<< gradient_accumulation_steps: 1
-2025-02-19 07:07:28,820:INFO:   <<< hidden_size: 256
-2025-02-19 07:07:28,820:INFO:   <<< init_model: None
-2025-02-19 07:07:28,820:INFO:   <<< kll: 0.0
-2025-02-19 07:07:28,820:INFO:   <<< label_dim: 256
-2025-02-19 07:07:28,820:INFO:   <<< latent_size: 128
-2025-02-19 07:07:28,820:INFO:   <<< local_rank: 0
-2025-02-19 07:07:28,820:INFO:   <<< lr: 0.0002
-2025-02-19 07:07:28,820:INFO:   <<< lr_decay: 0.9
-2025-02-19 07:07:28,820:INFO:   <<< max_frames: 60
-2025-02-19 07:07:28,820:INFO:   <<< max_label: 6
-2025-02-19 07:07:28,821:INFO:   <<< max_sequence: 60
-2025-02-19 07:07:28,821:INFO:   <<< max_words: 60
-2025-02-19 07:07:28,821:INFO:   <<< moco_queue: 8192
-2025-02-19 07:07:28,821:INFO:   <<< n_display: 10
-2025-02-19 07:07:28,821:INFO:   <<< n_gpu: 1
-2025-02-19 07:07:28,821:INFO:   <<< num_classes: 6
-2025-02-19 07:07:28,821:INFO:   <<< num_thread_reader: 1
-2025-02-19 07:07:28,821:INFO:   <<< output_dir: ./experience/late_fusion_2
-2025-02-19 07:07:28,821:INFO:   <<< pro_dim: 256
-2025-02-19 07:07:28,821:INFO:   <<< rel: 0.0
-2025-02-19 07:07:28,821:INFO:   <<< seed: 42
-2025-02-19 07:07:28,821:INFO:   <<< temperature: 0.07
-2025-02-19 07:07:28,821:INFO:   <<< text_dim: 768
-2025-02-19 07:07:28,821:INFO:   <<< threshold: 0.21
-2025-02-19 07:07:28,821:INFO:   <<< unaligned_data_path: ./datasets/MMSA/aligned_501.pkl
-2025-02-19 07:07:28,821:INFO:   <<< video_dim: 35
-2025-02-19 07:07:28,821:INFO:   <<< visual_model: visual-base
-2025-02-19 07:07:28,821:INFO:   <<< visual_num_hidden_layers: 3
-2025-02-19 07:07:28,821:INFO:   <<< warmup_proportion: 0.1
-2025-02-19 07:07:28,821:INFO:   <<< world_size: 0
-2025-02-19 07:07:28,821:INFO: device: cuda:1 n_gpu: 1
-2025-02-19 07:07:28,821:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/bert-base
-2025-02-19 07:07:28,821:INFO: Model config {
+2024-12-07 01:50:47,454:INFO: Effective parameters:
+2024-12-07 01:50:47,454:INFO:   <<< aligned: True
+2024-12-07 01:50:47,454:INFO:   <<< audio_dim: 74
+2024-12-07 01:50:47,454:INFO:   <<< audio_model: audio-base
+2024-12-07 01:50:47,454:INFO:   <<< audio_num_hidden_layers: 3
+2024-12-07 01:50:47,454:INFO:   <<< average: False
+2024-12-07 01:50:47,454:INFO:   <<< batch_size: 64
+2024-12-07 01:50:47,454:INFO:   <<< bert_model: bert-base
+2024-12-07 01:50:47,454:INFO:   <<< bert_num_hidden_layers: 3
+2024-12-07 01:50:47,454:INFO:   <<< cdl: 1.0
+2024-12-07 01:50:47,455:INFO:   <<< cml: 0.3
+2024-12-07 01:50:47,455:INFO:   <<< coef_lr: 0.1
+2024-12-07 01:50:47,455:INFO:   <<< crl: 0.3
+2024-12-07 01:50:47,455:INFO:   <<< cross_model: cross-base
+2024-12-07 01:50:47,455:INFO:   <<< cross_num_hidden_layers: 3
+2024-12-07 01:50:47,455:INFO:   <<< data_path: /data/huangjingwang/Article1_MultiModal/datasets/MMSA/aligned_501.pkl
+2024-12-07 01:50:47,455:INFO:   <<< decoder_model: decoder-base
+2024-12-07 01:50:47,455:INFO:   <<< decoder_num_hidden_layers: 1
+2024-12-07 01:50:47,455:INFO:   <<< device: cuda:2
+2024-12-07 01:50:47,455:INFO:   <<< do_test: False
+2024-12-07 01:50:47,455:INFO:   <<< do_train: True
+2024-12-07 01:50:47,455:INFO:   <<< epochs: 30
+2024-12-07 01:50:47,455:INFO:   <<< final_loss: 1.0
+2024-12-07 01:50:47,455:INFO:   <<< gradient_accumulation_steps: 1
+2024-12-07 01:50:47,455:INFO:   <<< hidden_size: 256
+2024-12-07 01:50:47,455:INFO:   <<< init_model: None
+2024-12-07 01:50:47,455:INFO:   <<< kll: 0.0
+2024-12-07 01:50:47,455:INFO:   <<< label_dim: 256
+2024-12-07 01:50:47,455:INFO:   <<< latent_size: 128
+2024-12-07 01:50:47,455:INFO:   <<< local_rank: 0
+2024-12-07 01:50:47,455:INFO:   <<< lr: 0.0002
+2024-12-07 01:50:47,455:INFO:   <<< lr_decay: 0.9
+2024-12-07 01:50:47,455:INFO:   <<< max_frames: 60
+2024-12-07 01:50:47,455:INFO:   <<< max_label: 6
+2024-12-07 01:50:47,455:INFO:   <<< max_sequence: 60
+2024-12-07 01:50:47,455:INFO:   <<< max_words: 60
+2024-12-07 01:50:47,455:INFO:   <<< moco_queue: 8192
+2024-12-07 01:50:47,455:INFO:   <<< n_display: 10
+2024-12-07 01:50:47,455:INFO:   <<< n_gpu: 1
+2024-12-07 01:50:47,455:INFO:   <<< num_classes: 6
+2024-12-07 01:50:47,456:INFO:   <<< num_thread_reader: 1
+2024-12-07 01:50:47,456:INFO:   <<< output_dir: ./experience/late_fusion_2
+2024-12-07 01:50:47,456:INFO:   <<< pro_dim: 256
+2024-12-07 01:50:47,456:INFO:   <<< rel: 0.0
+2024-12-07 01:50:47,456:INFO:   <<< seed: 42
+2024-12-07 01:50:47,456:INFO:   <<< temperature: 0.07
+2024-12-07 01:50:47,456:INFO:   <<< text_dim: 768
+2024-12-07 01:50:47,456:INFO:   <<< unaligned_data_path: /amax/cmy/mosei_senti_data_noalign.pkl
+2024-12-07 01:50:47,456:INFO:   <<< video_dim: 35
+2024-12-07 01:50:47,456:INFO:   <<< visual_model: visual-base
+2024-12-07 01:50:47,456:INFO:   <<< visual_num_hidden_layers: 3
+2024-12-07 01:50:47,456:INFO:   <<< warmup_proportion: 0.1
+2024-12-07 01:50:47,456:INFO:   <<< world_size: 0
+2024-12-07 01:50:47,456:INFO: device: cuda:2 n_gpu: 1
+2024-12-07 01:50:47,456:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/MyWork/src/models/bert-base
+2024-12-07 01:50:47,456:INFO: Model config {
   "attention_probs_dropout_prob": 0.3,
   "hidden_act": "gelu",
   "hidden_dropout_prob": 0.3,
@@ -68,9 +67,9 @@
   "vocab_size": 300
 }
 
-2025-02-19 07:07:28,822:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/bert-base/bert_pytorch_model.bin
-2025-02-19 07:07:28,822:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/visual-base
-2025-02-19 07:07:28,822:INFO: Model config {
+2024-12-07 01:50:47,456:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/MyWork/src/models/bert-base/bert_pytorch_model.bin
+2024-12-07 01:50:47,457:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/MyWork/src/models/visual-base
+2024-12-07 01:50:47,457:INFO: Model config {
   "attention_probs_dropout_prob": 0.3,
   "hidden_act": "gelu",
   "hidden_dropout_prob": 0.3,
@@ -84,9 +83,9 @@
   "vocab_size": 35
 }
 
-2025-02-19 07:07:28,822:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/visual-base/visual_pytorch_model.bin
-2025-02-19 07:07:28,822:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/audio-base
-2025-02-19 07:07:28,822:INFO: Model config {
+2024-12-07 01:50:47,457:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/MyWork/src/models/visual-base/visual_pytorch_model.bin
+2024-12-07 01:50:47,457:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/MyWork/src/models/audio-base
+2024-12-07 01:50:47,457:INFO: Model config {
   "attention_probs_dropout_prob": 0.3,
   "hidden_act": "gelu",
   "hidden_dropout_prob": 0.3,
@@ -100,9 +99,9 @@
   "vocab_size": 74
 }
 
-2025-02-19 07:07:28,822:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/audio-base/audio_model.bin
-2025-02-19 07:07:28,822:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/cross-base
-2025-02-19 07:07:28,822:INFO: Model config {
+2024-12-07 01:50:47,457:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/MyWork/src/models/audio-base/audio_model.bin
+2024-12-07 01:50:47,457:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/MyWork/src/models/cross-base
+2024-12-07 01:50:47,457:INFO: Model config {
   "attention_probs_dropout_prob": 0.3,
   "hidden_act": "gelu",
   "hidden_dropout_prob": 0.3,
@@ -116,9 +115,9 @@
   "vocab_size": 256
 }
 
-2025-02-19 07:07:28,822:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/cross-base/cross_pytorch_model.bin
-2025-02-19 07:07:28,822:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/decoder-base
-2025-02-19 07:07:28,823:INFO: Model config {
+2024-12-07 01:50:47,457:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/MyWork/src/models/cross-base/cross_pytorch_model.bin
+2024-12-07 01:50:47,457:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/MyWork/src/models/decoder-base
+2024-12-07 01:50:47,458:INFO: Model config {
   "attention_probs_dropout_prob": 0.3,
   "hidden_act": "gelu",
   "hidden_dropout_prob": 0.3,
@@ -133,242 +132,137 @@
   "vocab_size": 6
 }
 
-2025-02-19 07:07:28,823:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/decoder-base/decoder_pytorch_model.bin
-2025-02-19 07:07:28,823:WARNING: Set bert_config.num_hidden_layers: 3.
-2025-02-19 07:07:28,823:WARNING: Set bert_config.vocab_size: 768.
-2025-02-19 07:07:29,054:WARNING: Set visual_config.num_hidden_layers: 3.
-2025-02-19 07:07:29,054:WARNING: Set visual_config.vocab_size: 35.
-2025-02-19 07:07:29,075:WARNING: Set audio_config.num_hidden_layers: 3.
-2025-02-19 07:07:29,075:WARNING: Set audio_config.vocab_size: 74.
-2025-02-19 07:07:29,450:WARNING: !!!!!!!!!!!!!! you start train aligned dataset
-2025-02-19 08:06:48,662:INFO: Effective parameters:
-2025-02-19 08:06:48,662:INFO:   <<< aligned: True
-2025-02-19 08:06:48,662:INFO:   <<< audio_dim: 74
-2025-02-19 08:06:48,662:INFO:   <<< audio_model: audio-base
-2025-02-19 08:06:48,662:INFO:   <<< audio_num_hidden_layers: 3
-2025-02-19 08:06:48,662:INFO:   <<< average: False
-2025-02-19 08:06:48,662:INFO:   <<< batch_size: 64
-2025-02-19 08:06:48,662:INFO:   <<< bert_model: bert-base
-2025-02-19 08:06:48,662:INFO:   <<< bert_num_hidden_layers: 3
-2025-02-19 08:06:48,662:INFO:   <<< cdl: 1.0
-2025-02-19 08:06:48,662:INFO:   <<< cml: 0.3
-2025-02-19 08:06:48,662:INFO:   <<< coef_lr: 0.1
-2025-02-19 08:06:48,662:INFO:   <<< crl: 0.3
-2025-02-19 08:06:48,662:INFO:   <<< cross_model: cross-base
-2025-02-19 08:06:48,662:INFO:   <<< cross_num_hidden_layers: 3
-2025-02-19 08:06:48,662:INFO:   <<< data_path: /data/huangjingwang/Article1_MultiModal/datasets/MMSA/aligned_501.pkl
-2025-02-19 08:06:48,662:INFO:   <<< decoder_model: decoder-base
-2025-02-19 08:06:48,662:INFO:   <<< decoder_num_hidden_layers: 1
-2025-02-19 08:06:48,662:INFO:   <<< device: cuda:1
-2025-02-19 08:06:48,662:INFO:   <<< do_test: False
-2025-02-19 08:06:48,662:INFO:   <<< do_train: True
-2025-02-19 08:06:48,662:INFO:   <<< epochs: 30
-2025-02-19 08:06:48,662:INFO:   <<< final_loss: 1.0
-2025-02-19 08:06:48,662:INFO:   <<< gradient_accumulation_steps: 1
-2025-02-19 08:06:48,662:INFO:   <<< hidden_size: 256
-2025-02-19 08:06:48,663:INFO:   <<< init_model: None
-2025-02-19 08:06:48,663:INFO:   <<< kll: 0.0
-2025-02-19 08:06:48,663:INFO:   <<< label_dim: 256
-2025-02-19 08:06:48,663:INFO:   <<< latent_size: 128
-2025-02-19 08:06:48,663:INFO:   <<< local_rank: 0
-2025-02-19 08:06:48,663:INFO:   <<< lr: 0.0002
-2025-02-19 08:06:48,663:INFO:   <<< lr_decay: 0.9
-2025-02-19 08:06:48,663:INFO:   <<< max_frames: 60
-2025-02-19 08:06:48,663:INFO:   <<< max_label: 6
-2025-02-19 08:06:48,663:INFO:   <<< max_sequence: 60
-2025-02-19 08:06:48,663:INFO:   <<< max_words: 60
-2025-02-19 08:06:48,663:INFO:   <<< moco_queue: 8192
-2025-02-19 08:06:48,663:INFO:   <<< n_display: 10
-2025-02-19 08:06:48,663:INFO:   <<< n_gpu: 1
-2025-02-19 08:06:48,663:INFO:   <<< num_classes: 6
-2025-02-19 08:06:48,663:INFO:   <<< num_thread_reader: 1
-2025-02-19 08:06:48,663:INFO:   <<< output_dir: ./experience/late_fusion_2
-2025-02-19 08:06:48,663:INFO:   <<< pro_dim: 256
-2025-02-19 08:06:48,663:INFO:   <<< rel: 0.0
-2025-02-19 08:06:48,663:INFO:   <<< seed: 42
-2025-02-19 08:06:48,663:INFO:   <<< temperature: 0.07
-2025-02-19 08:06:48,663:INFO:   <<< text_dim: 768
-2025-02-19 08:06:48,663:INFO:   <<< threshold: 0.21
-2025-02-19 08:06:48,663:INFO:   <<< unaligned_data_path: ./datasets/MMSA/aligned_501.pkl
-2025-02-19 08:06:48,663:INFO:   <<< video_dim: 35
-2025-02-19 08:06:48,663:INFO:   <<< visual_model: visual-base
-2025-02-19 08:06:48,663:INFO:   <<< visual_num_hidden_layers: 3
-2025-02-19 08:06:48,663:INFO:   <<< warmup_proportion: 0.1
-2025-02-19 08:06:48,663:INFO:   <<< world_size: 0
-2025-02-19 08:06:48,663:INFO: device: cuda:1 n_gpu: 1
-2025-02-19 08:06:48,663:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/bert-base
-2025-02-19 08:06:48,664:INFO: Model config {
-  "attention_probs_dropout_prob": 0.3,
-  "hidden_act": "gelu",
-  "hidden_dropout_prob": 0.3,
-  "hidden_size": 256,
-  "initializer_range": 0.02,
-  "intermediate_size": 256,
-  "max_position_embeddings": 60,
-  "num_attention_heads": 8,
-  "num_hidden_layers": 12,
-  "type_vocab_size": 2,
-  "vocab_size": 300
-}
-
-2025-02-19 08:06:48,664:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/bert-base/bert_pytorch_model.bin
-2025-02-19 08:06:48,664:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/visual-base
-2025-02-19 08:06:48,664:INFO: Model config {
-  "attention_probs_dropout_prob": 0.3,
-  "hidden_act": "gelu",
-  "hidden_dropout_prob": 0.3,
-  "hidden_size": 256,
-  "initializer_range": 0.02,
-  "intermediate_size": 256,
-  "max_position_embeddings": 60,
-  "num_attention_heads": 8,
-  "num_hidden_layers": 1,
-  "type_vocab_size": 2,
-  "vocab_size": 35
-}
-
-2025-02-19 08:06:48,664:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/visual-base/visual_pytorch_model.bin
-2025-02-19 08:06:48,664:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/audio-base
-2025-02-19 08:06:48,664:INFO: Model config {
-  "attention_probs_dropout_prob": 0.3,
-  "hidden_act": "gelu",
-  "hidden_dropout_prob": 0.3,
-  "hidden_size": 256,
-  "initializer_range": 0.02,
-  "intermediate_size": 256,
-  "max_position_embeddings": 60,
-  "num_attention_heads": 8,
-  "num_hidden_layers": 1,
-  "type_vocab_size": 2,
-  "vocab_size": 74
-}
-
-2025-02-19 08:06:48,664:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/audio-base/audio_model.bin
-2025-02-19 08:06:48,665:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/cross-base
-2025-02-19 08:06:48,665:INFO: Model config {
-  "attention_probs_dropout_prob": 0.3,
-  "hidden_act": "gelu",
-  "hidden_dropout_prob": 0.3,
-  "hidden_size": 256,
-  "initializer_range": 0.02,
-  "intermediate_size": 256,
-  "max_position_embeddings": 240,
-  "num_attention_heads": 8,
-  "num_hidden_layers": 2,
-  "type_vocab_size": 2,
-  "vocab_size": 256
-}
-
-2025-02-19 08:06:48,665:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/cross-base/cross_pytorch_model.bin
-2025-02-19 08:06:48,665:INFO: loading archive file /data/huangjingwang/Article1_MultiModal/lddu/src/models/decoder-base
-2025-02-19 08:06:48,665:INFO: Model config {
-  "attention_probs_dropout_prob": 0.3,
-  "hidden_act": "gelu",
-  "hidden_dropout_prob": 0.3,
-  "hidden_size": 256,
-  "initializer_range": 0.02,
-  "intermediate_size": 256,
-  "max_target_embeddings": 6,
-  "num_attention_heads": 8,
-  "num_decoder_layers": 1,
-  "num_hidden_layers": 12,
-  "type_vocab_size": 2,
-  "vocab_size": 6
-}
-
-2025-02-19 08:06:48,665:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/lddu/src/models/decoder-base/decoder_pytorch_model.bin
-2025-02-19 08:06:48,665:WARNING: Set bert_config.num_hidden_layers: 3.
-2025-02-19 08:06:48,665:WARNING: Set bert_config.vocab_size: 768.
-2025-02-19 08:06:48,725:WARNING: Set visual_config.num_hidden_layers: 3.
-2025-02-19 08:06:48,725:WARNING: Set visual_config.vocab_size: 35.
-2025-02-19 08:06:48,745:WARNING: Set audio_config.num_hidden_layers: 3.
-2025-02-19 08:06:48,745:WARNING: Set audio_config.vocab_size: 74.
-2025-02-19 08:06:49,029:WARNING: !!!!!!!!!!!!!! you start train aligned dataset
-2025-02-19 08:07:14,837:INFO: ***** Running training *****
-2025-02-19 08:07:14,837:INFO:   Num examples = 16326
-2025-02-19 08:07:14,837:INFO:   Batch size = 64
-2025-02-19 08:07:14,837:INFO:   Num steps = 7680
-2025-02-19 08:08:08,272:INFO: Epoch 1/30 Finished, Train Loss: 8.499125, Train_micro_f1: 0.466192, Train_micro_precision: 0.775840, Train_micro_recall: 0.333206,  Train_acc: 0.353400, train_gap: 0.451023
-2025-02-19 08:08:08,273:INFO: ***** Running testing *****
-2025-02-19 08:08:08,273:INFO:   Num examples = 4659
-2025-02-19 08:08:08,273:INFO:   Batch_size = 64
-2025-02-19 08:08:13,294:INFO: ----- micro_f1: 0.540860, micro_precision: 0.721959, micro_recall: 0.432397,  acc: 0.444800, test_gap: 0.572378, threshold: 0.210000
-2025-02-19 08:08:13,379:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_0.bin.
-2025-02-19 08:08:13,380:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_0.bin., the f1 is: 0.5409
-2025-02-19 08:09:03,373:INFO: Epoch 2/30 Finished, Train Loss: 7.423217, Train_micro_f1: 0.542644, Train_micro_precision: 0.724183, Train_micro_recall: 0.433879,  Train_acc: 0.447400, train_gap: 0.573370
-2025-02-19 08:09:03,373:INFO: ***** Running testing *****
-2025-02-19 08:09:03,373:INFO:   Num examples = 4659
-2025-02-19 08:09:03,373:INFO:   Batch_size = 64
-2025-02-19 08:09:08,368:INFO: ----- micro_f1: 0.543594, micro_precision: 0.709163, micro_recall: 0.440703,  acc: 0.442000, test_gap: 0.591653, threshold: 0.210000
-2025-02-19 08:09:08,448:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_1.bin.
-2025-02-19 08:09:08,457:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_1.bin., the f1 is: 0.5436
-2025-02-19 08:09:58,495:INFO: Epoch 3/30 Finished, Train Loss: 6.938740, Train_micro_f1: 0.547901, Train_micro_precision: 0.731945, Train_micro_recall: 0.437815,  Train_acc: 0.452800, train_gap: 0.590832
-2025-02-19 08:09:58,495:INFO: ***** Running testing *****
-2025-02-19 08:09:58,495:INFO:   Num examples = 4659
-2025-02-19 08:09:58,495:INFO:   Batch_size = 64
-2025-02-19 08:10:03,661:INFO: ----- micro_f1: 0.537730, micro_precision: 0.758768, micro_recall: 0.416421,  acc: 0.446500, test_gap: 0.598703, threshold: 0.210000
-2025-02-19 08:10:03,661:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_1.bin., the f1 is: 0.5436
-2025-02-19 08:10:53,341:INFO: Epoch 4/30 Finished, Train Loss: 6.913172, Train_micro_f1: 0.554278, Train_micro_precision: 0.741848, Train_micro_recall: 0.442417,  Train_acc: 0.458800, train_gap: 0.605616
-2025-02-19 08:10:53,341:INFO: ***** Running testing *****
-2025-02-19 08:10:53,341:INFO:   Num examples = 4659
-2025-02-19 08:10:53,341:INFO:   Batch_size = 64
-2025-02-19 08:10:58,487:INFO: ----- micro_f1: 0.535279, micro_precision: 0.776619, micro_recall: 0.408373,  acc: 0.423200, test_gap: 0.605284, threshold: 0.210000
-2025-02-19 08:10:58,488:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_1.bin., the f1 is: 0.5436
-2025-02-19 08:11:48,565:INFO: Epoch 5/30 Finished, Train Loss: 6.895805, Train_micro_f1: 0.562914, Train_micro_precision: 0.751662, Train_micro_recall: 0.449933,  Train_acc: 0.464700, train_gap: 0.618410
-2025-02-19 08:11:48,566:INFO: ***** Running testing *****
-2025-02-19 08:11:48,566:INFO:   Num examples = 4659
-2025-02-19 08:11:48,566:INFO:   Batch_size = 64
-2025-02-19 08:11:54,002:INFO: ----- micro_f1: 0.558429, micro_precision: 0.716430, micro_recall: 0.457526,  acc: 0.458300, test_gap: 0.603202, threshold: 0.210000
-2025-02-19 08:11:54,083:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_4.bin.
-2025-02-19 08:11:54,092:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_4.bin., the f1 is: 0.5584
-2025-02-19 08:12:43,896:INFO: Epoch 6/30 Finished, Train Loss: 6.888519, Train_micro_f1: 0.570829, Train_micro_precision: 0.757773, Train_micro_recall: 0.457871,  Train_acc: 0.473000, train_gap: 0.629936
-2025-02-19 08:12:43,896:INFO: ***** Running testing *****
-2025-02-19 08:12:43,896:INFO:   Num examples = 4659
-2025-02-19 08:12:43,897:INFO:   Batch_size = 64
-2025-02-19 08:12:49,107:INFO: ----- micro_f1: 0.542114, micro_precision: 0.713270, micro_recall: 0.437203,  acc: 0.443600, test_gap: 0.580818, threshold: 0.210000
-2025-02-19 08:12:49,107:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_4.bin., the f1 is: 0.5584
-2025-02-19 08:13:38,954:INFO: Epoch 7/30 Finished, Train Loss: 6.875125, Train_micro_f1: 0.575935, Train_micro_precision: 0.765669, Train_micro_recall: 0.461559,  Train_acc: 0.474900, train_gap: 0.644443
-2025-02-19 08:13:38,954:INFO: ***** Running testing *****
-2025-02-19 08:13:38,954:INFO:   Num examples = 4659
-2025-02-19 08:13:38,954:INFO:   Batch_size = 64
-2025-02-19 08:13:44,257:INFO: ----- micro_f1: 0.573476, micro_precision: 0.701580, micro_recall: 0.484931,  acc: 0.475600, test_gap: 0.620731, threshold: 0.210000
-2025-02-19 08:13:44,339:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_6.bin.
-2025-02-19 08:13:44,349:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_6.bin., the f1 is: 0.5735
-2025-02-19 08:14:34,360:INFO: Epoch 8/30 Finished, Train Loss: 6.863537, Train_micro_f1: 0.586198, Train_micro_precision: 0.774725, Train_micro_recall: 0.471468,  Train_acc: 0.483900, train_gap: 0.657109
-2025-02-19 08:14:34,360:INFO: ***** Running testing *****
-2025-02-19 08:14:34,360:INFO:   Num examples = 4659
-2025-02-19 08:14:34,360:INFO:   Batch_size = 64
-2025-02-19 08:14:39,628:INFO: ----- micro_f1: 0.585041, micro_precision: 0.672196, micro_recall: 0.517892,  acc: 0.491900, test_gap: 0.623526, threshold: 0.210000
-2025-02-19 08:14:39,709:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_7.bin.
-2025-02-19 08:14:39,718:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5850
-2025-02-19 08:15:30,997:INFO: Epoch 9/30 Finished, Train Loss: 6.853517, Train_micro_f1: 0.593867, Train_micro_precision: 0.779230, Train_micro_recall: 0.479745,  Train_acc: 0.490200, train_gap: 0.669195
-2025-02-19 08:15:30,997:INFO: ***** Running testing *****
-2025-02-19 08:15:30,997:INFO:   Num examples = 4659
-2025-02-19 08:15:30,997:INFO:   Batch_size = 64
-2025-02-19 08:15:36,299:INFO: ----- micro_f1: 0.579573, micro_precision: 0.696998, micro_recall: 0.496009,  acc: 0.485800, test_gap: 0.619119, threshold: 0.210000
-2025-02-19 08:15:36,299:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5850
-2025-02-19 08:16:26,301:INFO: Epoch 10/30 Finished, Train Loss: 6.841694, Train_micro_f1: 0.603094, Train_micro_precision: 0.786858, Train_micro_recall: 0.488913,  Train_acc: 0.497400, train_gap: 0.682678
-2025-02-19 08:16:26,302:INFO: ***** Running testing *****
-2025-02-19 08:16:26,302:INFO:   Num examples = 4659
-2025-02-19 08:16:26,302:INFO:   Batch_size = 64
-2025-02-19 08:16:31,627:INFO: ----- micro_f1: 0.555729, micro_precision: 0.730964, micro_recall: 0.448266,  acc: 0.456000, test_gap: 0.590745, threshold: 0.210000
-2025-02-19 08:16:31,628:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5850
-2025-02-19 08:17:22,026:INFO: Epoch 11/30 Finished, Train Loss: 6.829994, Train_micro_f1: 0.612063, Train_micro_precision: 0.791721, Train_micro_recall: 0.498862,  Train_acc: 0.504600, train_gap: 0.697496
-2025-02-19 08:17:22,027:INFO: ***** Running testing *****
-2025-02-19 08:17:22,027:INFO:   Num examples = 4659
-2025-02-19 08:17:22,027:INFO:   Batch_size = 64
-2025-02-19 08:17:27,424:INFO: ----- micro_f1: 0.562011, micro_precision: 0.715166, micro_recall: 0.462883,  acc: 0.457900, test_gap: 0.608601, threshold: 0.210000
-2025-02-19 08:17:27,424:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5850
-2025-02-19 08:18:17,427:INFO: Epoch 12/30 Finished, Train Loss: 6.815589, Train_micro_f1: 0.625888, Train_micro_precision: 0.803587, Train_micro_recall: 0.512548,  Train_acc: 0.516100, train_gap: 0.711973
-2025-02-19 08:18:17,427:INFO: ***** Running testing *****
-2025-02-19 08:18:17,428:INFO:   Num examples = 4659
-2025-02-19 08:18:17,428:INFO:   Batch_size = 64
-2025-02-19 08:18:22,929:INFO: ----- micro_f1: 0.563399, micro_precision: 0.677725, micro_recall: 0.482077,  acc: 0.457300, test_gap: 0.605547, threshold: 0.210000
-2025-02-19 08:18:22,929:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5850
-2025-02-19 08:19:14,027:INFO: Epoch 13/30 Finished, Train Loss: 6.802966, Train_micro_f1: 0.633811, Train_micro_precision: 0.808627, Train_micro_recall: 0.521145,  Train_acc: 0.521400, train_gap: 0.725066
-2025-02-19 08:19:14,027:INFO: ***** Running testing *****
-2025-02-19 08:19:14,027:INFO:   Num examples = 4659
-2025-02-19 08:19:14,027:INFO:   Batch_size = 64
-2025-02-19 08:19:19,631:INFO: ----- micro_f1: 0.550577, micro_precision: 0.693049, micro_recall: 0.456694,  acc: 0.445600, test_gap: 0.581802, threshold: 0.210000
-2025-02-19 08:19:19,632:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5850
-2025-02-19 08:19:22,444:INFO: Final test results: f1 0.585041,	p 0.672196,	r 0.517892,	acc 0.491900
+2024-12-07 01:50:47,458:INFO: Weight doesn't exsits. /data/huangjingwang/Article1_MultiModal/MyWork/src/models/decoder-base/decoder_pytorch_model.bin
+2024-12-07 01:50:47,458:WARNING: Set bert_config.num_hidden_layers: 3.
+2024-12-07 01:50:47,458:WARNING: Set bert_config.vocab_size: 768.
+2024-12-07 01:50:47,481:WARNING: Set visual_config.num_hidden_layers: 3.
+2024-12-07 01:50:47,481:WARNING: Set visual_config.vocab_size: 35.
+2024-12-07 01:50:47,498:WARNING: Set audio_config.num_hidden_layers: 3.
+2024-12-07 01:50:47,498:WARNING: Set audio_config.vocab_size: 74.
+2024-12-07 01:50:47,696:WARNING: !!!!!!!!!!!!!! you start train aligned dataset
+2024-12-07 01:50:56,153:INFO: ***** Running training *****
+2024-12-07 01:50:56,153:INFO:   Num examples = 16326
+2024-12-07 01:50:56,153:INFO:   Batch size = 64
+2024-12-07 01:50:56,153:INFO:   Num steps = 7650
+2024-12-07 01:52:06,509:INFO: Best Threshold, Train_micro_f1: 0.472252, Train_micro_precision: 0.704869, Train_micro_recall: 0.355073,  Train_acc: 0.381700， threshold: 2.450000
+2024-12-07 01:52:07,304:INFO: Epoch 1/30 Finished, Train Loss: 8.499125, Train_micro_f1: 0.456869, Train_micro_precision: 0.539742, Train_micro_recall: 0.396057,  Train_acc: 0.408200, train_gap: 0.451263
+2024-12-07 01:52:07,304:INFO: ***** Running testing *****
+2024-12-07 01:52:07,304:INFO:   Num examples = 4659
+2024-12-07 01:52:07,304:INFO:   Batch_size = 64
+2024-12-07 01:52:10,244:INFO: Eval Threshold, Train_micro_f1: 0.546902, Train_micro_precision: 0.703333, Train_micro_recall: 0.447395,  Train_acc: 0.457600
+2024-12-07 01:52:16,983:INFO: Best Threshold, Train_micro_f1: 0.554437, Train_micro_precision: 0.646667, Train_micro_recall: 0.485231,  Train_acc: 0.475200， threshold: 2.950000
+2024-12-07 01:52:20,275:INFO: ----- micro_f1: 0.554437, micro_precision: 0.646667, micro_recall: 0.485231,  acc: 0.475200, test_gap: 0.574083
+2024-12-07 01:52:20,350:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_0.bin.
+2024-12-07 01:52:20,350:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_0.bin., the f1 is: 0.5544
+2024-12-07 01:53:30,350:INFO: Best Threshold, Train_micro_f1: 0.554562, Train_micro_precision: 0.618295, Train_micro_recall: 0.502739,  Train_acc: 0.469600， threshold: 2.900000
+2024-12-07 01:53:31,188:INFO: Epoch 2/30 Finished, Train Loss: 7.437792, Train_micro_f1: 0.542862, Train_micro_precision: 0.534226, Train_micro_recall: 0.551781,  Train_acc: 0.454200, train_gap: 0.573436
+2024-12-07 01:53:31,188:INFO: ***** Running testing *****
+2024-12-07 01:53:31,188:INFO:   Num examples = 4659
+2024-12-07 01:53:31,188:INFO:   Batch_size = 64
+2024-12-07 01:53:34,117:INFO: Eval Threshold, Train_micro_f1: 0.556045, Train_micro_precision: 0.601587, Train_micro_recall: 0.516912,  Train_acc: 0.480400
+2024-12-07 01:53:40,805:INFO: Best Threshold, Train_micro_f1: 0.557314, Train_micro_precision: 0.625873, Train_micro_recall: 0.502293,  Train_acc: 0.479800， threshold: 2.700000
+2024-12-07 01:53:44,131:INFO: ----- micro_f1: 0.557314, micro_precision: 0.625873, micro_recall: 0.502293,  acc: 0.479800, test_gap: 0.595502
+2024-12-07 01:53:44,205:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_1.bin.
+2024-12-07 01:53:44,214:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_1.bin., the f1 is: 0.5573
+2024-12-07 01:54:54,235:INFO: Best Threshold, Train_micro_f1: 0.560933, Train_micro_precision: 0.632079, Train_micro_recall: 0.504183,  Train_acc: 0.472700， threshold: 2.850000
+2024-12-07 01:54:55,135:INFO: Epoch 3/30 Finished, Train Loss: 6.938231, Train_micro_f1: 0.552687, Train_micro_precision: 0.545633, Train_micro_recall: 0.559927,  Train_acc: 0.457400, train_gap: 0.591847
+2024-12-07 01:54:55,135:INFO: ***** Running testing *****
+2024-12-07 01:54:55,135:INFO:   Num examples = 4659
+2024-12-07 01:54:55,135:INFO:   Batch_size = 64
+2024-12-07 01:54:58,042:INFO: Eval Threshold, Train_micro_f1: 0.567247, Train_micro_precision: 0.615238, Train_micro_recall: 0.526201,  Train_acc: 0.489400
+2024-12-07 01:55:04,770:INFO: Best Threshold, Train_micro_f1: 0.567570, Train_micro_precision: 0.620317, Train_micro_recall: 0.523089,  Train_acc: 0.489400， threshold: 2.800000
+2024-12-07 01:55:08,223:INFO: ----- micro_f1: 0.567570, micro_precision: 0.620317, micro_recall: 0.523089,  acc: 0.489400, test_gap: 0.603221
+2024-12-07 01:55:08,296:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_2.bin.
+2024-12-07 01:55:08,305:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_2.bin., the f1 is: 0.5676
+2024-12-07 01:56:18,676:INFO: Best Threshold, Train_micro_f1: 0.569994, Train_micro_precision: 0.630858, Train_micro_recall: 0.519841,  Train_acc: 0.479100， threshold: 2.950000
+2024-12-07 01:56:19,619:INFO: Epoch 4/30 Finished, Train Loss: 6.912100, Train_micro_f1: 0.561087, Train_micro_precision: 0.556592, Train_micro_recall: 0.565655,  Train_acc: 0.462400, train_gap: 0.608002
+2024-12-07 01:56:19,620:INFO: ***** Running testing *****
+2024-12-07 01:56:19,620:INFO:   Num examples = 4659
+2024-12-07 01:56:19,620:INFO:   Batch_size = 64
+2024-12-07 01:56:22,676:INFO: Eval Threshold, Train_micro_f1: 0.555643, Train_micro_precision: 0.673651, Train_micro_recall: 0.472816,  Train_acc: 0.459900
+2024-12-07 01:56:29,393:INFO: Best Threshold, Train_micro_f1: 0.555643, Train_micro_precision: 0.673651, Train_micro_recall: 0.472816,  Train_acc: 0.459900， threshold: 2.950000
+2024-12-07 01:56:32,753:INFO: ----- micro_f1: 0.555643, micro_precision: 0.673651, micro_recall: 0.472816,  acc: 0.459900, test_gap: 0.602194
+2024-12-07 01:56:32,754:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_2.bin., the f1 is: 0.5676
+2024-12-07 01:57:43,279:INFO: Best Threshold, Train_micro_f1: 0.579627, Train_micro_precision: 0.645426, Train_micro_recall: 0.526002,  Train_acc: 0.487400， threshold: 2.900000
+2024-12-07 01:57:43,909:INFO: Epoch 5/30 Finished, Train Loss: 6.897409, Train_micro_f1: 0.571698, Train_micro_precision: 0.567782, Train_micro_recall: 0.575668,  Train_acc: 0.470200, train_gap: 0.618350
+2024-12-07 01:57:43,909:INFO: ***** Running testing *****
+2024-12-07 01:57:43,909:INFO:   Num examples = 4659
+2024-12-07 01:57:43,910:INFO:   Batch_size = 64
+2024-12-07 01:57:46,886:INFO: Eval Threshold, Train_micro_f1: 0.572475, Train_micro_precision: 0.620317, Train_micro_recall: 0.531484,  Train_acc: 0.479700
+2024-12-07 01:57:53,570:INFO: Best Threshold, Train_micro_f1: 0.573469, Train_micro_precision: 0.656349, Train_micro_recall: 0.509174,  Train_acc: 0.481400， threshold: 2.600000
+2024-12-07 01:57:57,183:INFO: ----- micro_f1: 0.573469, micro_precision: 0.656349, micro_recall: 0.509174,  acc: 0.481400, test_gap: 0.614259
+2024-12-07 01:57:57,258:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_4.bin.
+2024-12-07 01:57:57,267:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_4.bin., the f1 is: 0.5735
+2024-12-07 01:59:07,424:INFO: Best Threshold, Train_micro_f1: 0.586736, Train_micro_precision: 0.646253, Train_micro_recall: 0.537257,  Train_acc: 0.490400， threshold: 2.950000
+2024-12-07 01:59:08,432:INFO: Epoch 6/30 Finished, Train Loss: 6.886407, Train_micro_f1: 0.578252, Train_micro_precision: 0.574432, Train_micro_recall: 0.582123,  Train_acc: 0.474600, train_gap: 0.632394
+2024-12-07 01:59:08,432:INFO: ***** Running testing *****
+2024-12-07 01:59:08,432:INFO:   Num examples = 4659
+2024-12-07 01:59:08,432:INFO:   Batch_size = 64
+2024-12-07 01:59:11,553:INFO: Eval Threshold, Train_micro_f1: 0.553414, Train_micro_precision: 0.622063, Train_micro_recall: 0.498410,  Train_acc: 0.452700
+2024-12-07 01:59:18,282:INFO: Best Threshold, Train_micro_f1: 0.555629, Train_micro_precision: 0.671429, Train_micro_recall: 0.473896,  Train_acc: 0.456300， threshold: 2.550000
+2024-12-07 01:59:21,643:INFO: ----- micro_f1: 0.555629, micro_precision: 0.671429, micro_recall: 0.473896,  acc: 0.456300, test_gap: 0.597273
+2024-12-07 01:59:21,643:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_4.bin., the f1 is: 0.5735
+2024-12-07 02:00:31,545:INFO: Best Threshold, Train_micro_f1: 0.595978, Train_micro_precision: 0.658559, Train_micro_recall: 0.544258,  Train_acc: 0.495800， threshold: 2.950000
+2024-12-07 02:00:32,538:INFO: Epoch 7/30 Finished, Train Loss: 6.875053, Train_micro_f1: 0.592320, Train_micro_precision: 0.592333, Train_micro_recall: 0.592307,  Train_acc: 0.484000, train_gap: 0.645566
+2024-12-07 02:00:32,538:INFO: ***** Running testing *****
+2024-12-07 02:00:32,538:INFO:   Num examples = 4659
+2024-12-07 02:00:32,538:INFO:   Batch_size = 64
+2024-12-07 02:00:35,488:INFO: Eval Threshold, Train_micro_f1: 0.564174, Train_micro_precision: 0.608413, Train_micro_recall: 0.525933,  Train_acc: 0.461600
+2024-12-07 02:00:42,201:INFO: Best Threshold, Train_micro_f1: 0.568920, Train_micro_precision: 0.647937, Train_micro_recall: 0.507081,  Train_acc: 0.466000， threshold: 2.700000
+2024-12-07 02:00:45,542:INFO: ----- micro_f1: 0.568920, micro_precision: 0.647937, micro_recall: 0.507081,  acc: 0.466000, test_gap: 0.617045
+2024-12-07 02:00:45,542:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_4.bin., the f1 is: 0.5735
+2024-12-07 02:01:55,094:INFO: Best Threshold, Train_micro_f1: 0.603066, Train_micro_precision: 0.680989, Train_micro_recall: 0.541145,  Train_acc: 0.501700， threshold: 2.850000
+2024-12-07 02:01:56,082:INFO: Epoch 8/30 Finished, Train Loss: 6.865452, Train_micro_f1: 0.600511, Train_micro_precision: 0.602775, Train_micro_recall: 0.598264,  Train_acc: 0.490000, train_gap: 0.657119
+2024-12-07 02:01:56,083:INFO: ***** Running testing *****
+2024-12-07 02:01:56,083:INFO:   Num examples = 4659
+2024-12-07 02:01:56,083:INFO:   Batch_size = 64
+2024-12-07 02:01:59,240:INFO: Eval Threshold, Train_micro_f1: 0.582720, Train_micro_precision: 0.622540, Train_micro_recall: 0.547689,  Train_acc: 0.488600
+2024-12-07 02:02:05,942:INFO: Best Threshold, Train_micro_f1: 0.586698, Train_micro_precision: 0.670000, Train_micro_recall: 0.521820,  Train_acc: 0.492100， threshold: 2.400000
+2024-12-07 02:02:09,357:INFO: ----- micro_f1: 0.586698, micro_precision: 0.670000, micro_recall: 0.521820,  acc: 0.492100, test_gap: 0.627001
+2024-12-07 02:02:09,483:INFO: Model saved to ./experience/late_fusion_2/pytorch_model_7.bin.
+2024-12-07 02:02:09,492:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5867
+2024-12-07 02:03:18,539:INFO: Best Threshold, Train_micro_f1: 0.612743, Train_micro_precision: 0.681630, Train_micro_recall: 0.556503,  Train_acc: 0.506300， threshold: 2.900000
+2024-12-07 02:03:19,688:INFO: Epoch 9/30 Finished, Train Loss: 6.853344, Train_micro_f1: 0.611944, Train_micro_precision: 0.615903, Train_micro_recall: 0.608035,  Train_acc: 0.498100, train_gap: 0.671386
+2024-12-07 02:03:19,688:INFO: ***** Running testing *****
+2024-12-07 02:03:19,689:INFO:   Num examples = 4659
+2024-12-07 02:03:19,689:INFO:   Batch_size = 64
+2024-12-07 02:03:22,702:INFO: Eval Threshold, Train_micro_f1: 0.580124, Train_micro_precision: 0.638413, Train_micro_recall: 0.531589,  Train_acc: 0.485700
+2024-12-07 02:03:29,407:INFO: Best Threshold, Train_micro_f1: 0.581728, Train_micro_precision: 0.649365, Train_micro_recall: 0.526851,  Train_acc: 0.486400， threshold: 2.800000
+2024-12-07 02:03:32,848:INFO: ----- micro_f1: 0.581728, micro_precision: 0.649365, micro_recall: 0.526851,  acc: 0.486400, test_gap: 0.619141
+2024-12-07 02:03:32,849:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5867
+2024-12-07 02:04:43,142:INFO: Best Threshold, Train_micro_f1: 0.623230, Train_micro_precision: 0.689558, Train_micro_recall: 0.568543,  Train_acc: 0.515000， threshold: 2.950000
+2024-12-07 02:04:44,291:INFO: Epoch 10/30 Finished, Train Loss: 6.841814, Train_micro_f1: 0.623811, Train_micro_precision: 0.631995, Train_micro_recall: 0.615836,  Train_acc: 0.507500, train_gap: 0.683989
+2024-12-07 02:04:44,291:INFO: ***** Running testing *****
+2024-12-07 02:04:44,292:INFO:   Num examples = 4659
+2024-12-07 02:04:44,292:INFO:   Batch_size = 64
+2024-12-07 02:04:47,219:INFO: Eval Threshold, Train_micro_f1: 0.559330, Train_micro_precision: 0.631111, Train_micro_recall: 0.502210,  Train_acc: 0.456600
+2024-12-07 02:04:53,921:INFO: Best Threshold, Train_micro_f1: 0.562769, Train_micro_precision: 0.654286, Train_micro_recall: 0.493712,  Train_acc: 0.460400， threshold: 2.750000
+2024-12-07 02:04:57,397:INFO: ----- micro_f1: 0.562769, micro_precision: 0.654286, micro_recall: 0.493712,  acc: 0.460400, test_gap: 0.598224
+2024-12-07 02:04:57,397:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5867
+2024-12-07 02:06:07,890:INFO: Best Threshold, Train_micro_f1: 0.635248, Train_micro_precision: 0.701589, Train_micro_recall: 0.580370,  Train_acc: 0.524900， threshold: 2.950000
+2024-12-07 02:06:09,119:INFO: Epoch 11/30 Finished, Train Loss: 6.829710, Train_micro_f1: 0.633879, Train_micro_precision: 0.644942, Train_micro_recall: 0.623188,  Train_acc: 0.516200, train_gap: 0.698385
+2024-12-07 02:06:09,119:INFO: ***** Running testing *****
+2024-12-07 02:06:09,119:INFO:   Num examples = 4659
+2024-12-07 02:06:09,119:INFO:   Batch_size = 64
+2024-12-07 02:06:12,160:INFO: Eval Threshold, Train_micro_f1: 0.553374, Train_micro_precision: 0.594921, Train_micro_recall: 0.517251,  Train_acc: 0.450100
+2024-12-07 02:06:18,873:INFO: Best Threshold, Train_micro_f1: 0.560743, Train_micro_precision: 0.680635, Train_micro_recall: 0.476762,  Train_acc: 0.457800， threshold: 2.250000
+2024-12-07 02:06:22,217:INFO: ----- micro_f1: 0.560743, micro_precision: 0.680635, micro_recall: 0.476762,  acc: 0.457800, test_gap: 0.604535
+2024-12-07 02:06:22,217:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5867
+2024-12-07 02:07:30,894:INFO: Best Threshold, Train_micro_f1: 0.644409, Train_micro_precision: 0.716664, Train_micro_recall: 0.585390,  Train_acc: 0.530000， threshold: 2.950000
+2024-12-07 02:07:31,518:INFO: Epoch 12/30 Finished, Train Loss: 6.816428, Train_micro_f1: 0.645070, Train_micro_precision: 0.662487, Train_micro_recall: 0.628546,  Train_acc: 0.523200, train_gap: 0.712087
+2024-12-07 02:07:31,518:INFO: ***** Running testing *****
+2024-12-07 02:07:31,518:INFO:   Num examples = 4659
+2024-12-07 02:07:31,518:INFO:   Batch_size = 64
+2024-12-07 02:07:34,563:INFO: Eval Threshold, Train_micro_f1: 0.557631, Train_micro_precision: 0.599365, Train_micro_recall: 0.521331,  Train_acc: 0.453100
+2024-12-07 02:07:41,248:INFO: Best Threshold, Train_micro_f1: 0.557631, Train_micro_precision: 0.599365, Train_micro_recall: 0.521331,  Train_acc: 0.453100， threshold: 2.950000
+2024-12-07 02:07:44,753:INFO: ----- micro_f1: 0.557631, micro_precision: 0.599365, micro_recall: 0.521331,  acc: 0.453100, test_gap: 0.603568
+2024-12-07 02:07:44,753:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5867
+2024-12-07 02:08:55,233:INFO: Best Threshold, Train_micro_f1: 0.655540, Train_micro_precision: 0.725646, Train_micro_recall: 0.597787,  Train_acc: 0.537500， threshold: 2.950000
+2024-12-07 02:08:55,857:INFO: Epoch 13/30 Finished, Train Loss: 6.803416, Train_micro_f1: 0.657197, Train_micro_precision: 0.675131, Train_micro_recall: 0.640191,  Train_acc: 0.532000, train_gap: 0.726568
+2024-12-07 02:08:55,857:INFO: ***** Running testing *****
+2024-12-07 02:08:55,857:INFO:   Num examples = 4659
+2024-12-07 02:08:55,857:INFO:   Batch_size = 64
+2024-12-07 02:08:58,885:INFO: Eval Threshold, Train_micro_f1: 0.544865, Train_micro_precision: 0.586508, Train_micro_recall: 0.508743,  Train_acc: 0.442700
+2024-12-07 02:09:05,591:INFO: Best Threshold, Train_micro_f1: 0.554399, Train_micro_precision: 0.676190, Train_micro_recall: 0.469784,  Train_acc: 0.451500， threshold: 2.100000
+2024-12-07 02:09:09,005:INFO: ----- micro_f1: 0.554399, micro_precision: 0.676190, micro_recall: 0.469784,  acc: 0.451500, test_gap: 0.592401
+2024-12-07 02:09:09,005:INFO: The best model is: ./experience/late_fusion_2/pytorch_model_7.bin., the f1 is: 0.5867
