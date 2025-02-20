@@ -350,7 +350,8 @@ def main(args):
                 logger.info('  Num examples = %d', test_length)
                 logger.info("  Batch_size = %d", args.batch_size)
                 test_pred, test_label, test_pred_scores, common_var = eval_epoch(model, test_dataloader, device, label_input, label_mask)
-                best_test_threshold = search_binary(test_pred_scores, test_label)
+                # best_test_threshold = search_binary(test_pred_scores, test_label)
+                best_test_threshold = args.threshold
                 test_pred = getBinaryTensor(test_pred_scores, best_test_threshold)
                 test_micro_f1, test_micro_precision, test_micro_recall, test_acc = get_metrics(test_pred, test_label)
                 test_pred1, test_label1, _, common_var = eval_epoch(model, test_dataloader, device, label_input, label_mask)
@@ -379,8 +380,8 @@ def main(args):
     print("best_output_model_file", best_output_model_file)
     best_model = load_model(model, best_output_model_file)
     test_pred, test_label, test_pred_scores, common_var  = eval_epoch(best_model, test_dataloader, device, label_input, label_mask)
-    best_test_threshold = search_binary(test_pred_scores, test_label)
-    test_pred = getBinaryTensor(test_pred_scores, best_test_threshold)
+    # best_test_threshold = search_binary(test_pred_scores, test_label)
+    test_pred = getBinaryTensor(test_pred_scores, args.threshold)
     # torch.save({
     #     'test_pred': test_pred,
     #     'test_label': test_label,

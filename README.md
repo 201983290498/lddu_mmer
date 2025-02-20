@@ -1,5 +1,5 @@
 # Latent Distribution Decoupling: A Probabilistic Framework for Uncertainty-Aware Multimodal Emotion Recognition
-[\[Paper\]](https://arxiv.org/abs/2312.08379)
+[\[Paper\]](https://arxiv.org/abs/2502.13954)
 
 This is the homepage for Latent Distribution Decoupling: A Probabilistic Framework for Uncertainty-Aware Multimodal Emotion Recognition.
 
@@ -46,5 +46,13 @@ sh trian.sh
 ```
 ## Citation
 ```code
-
+@misc{huang2025latentdistributiondecouplingprobabilistic,
+      title={Latent Distribution Decoupling: A Probabilistic Framework for Uncertainty-Aware Multimodal Emotion Recognition}, 
+      author={Jingwang Huang and Jiang Zhong and Qin Lei and Jinpeng Gao and Yuming Yang and Sirui Wang and Peiguang Li and Kaiwen Wei},
+      year={2025},
+      eprint={2502.13954},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2502.13954}, 
+}
 ```

@@ -9,4 +9,4 @@ python train.py \
     --batch_size 64 \
     --device cuda:1 \
     --output_dir ./experience/late_fusion_2 \
-    --data_path ./datasets/MMSA/aligned_501.pkl
+    --data_path /data/huangjingwang/Article1_MultiModal/datasets/MMSA/aligned_501.pkl
