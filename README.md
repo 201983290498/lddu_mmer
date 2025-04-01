@@ -1,5 +1,5 @@
-# Latent Distribution Decoupling: A Probabilistic Framework for Uncertainty-Aware Multimodal Emotion Recognition
-[\[Paper\]](https://arxiv.org/abs/2502.13954)
+# Latent Distribution Decouple for Uncertain-Aware Multimodal Multi-label Emotion Recognition
+
 
 This is the homepage for Latent Distribution Decoupling: A Probabilistic Framework for Uncertainty-Aware Multimodal Emotion Recognition.
 
@@ -7,7 +7,6 @@ We propose a new framework name lddu based on the latent emotion space modeling 
 
 ![LDDU Framework](./images/framework_v2.png)
 
-Authors: [Jiangwang Huang](huangjiangwang@stu.cqu.edu.cn), [KaiWen Wei](weikaiwen@cqu.edu.cn), [Jiang Zhong](zhongjiang@cqu.edu.cn) at el.
 
 ## Quick Links:
 - [Requirements](#requirements)
@@ -43,16 +42,4 @@ More details about CMU-MOSEI and M3ED datasets will be released soon after the p
 
 ```bash
 sh trian.sh
-```
-## Citation
-```code
-@misc{huang2025latentdistributiondecouplingprobabilistic,
-      title={Latent Distribution Decoupling: A Probabilistic Framework for Uncertainty-Aware Multimodal Emotion Recognition}, 
-      author={Jingwang Huang and Jiang Zhong and Qin Lei and Jinpeng Gao and Yuming Yang and Sirui Wang and Peiguang Li and Kaiwen Wei},
-      year={2025},
-      eprint={2502.13954},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2502.13954}, 
-}
 ```
